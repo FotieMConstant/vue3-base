@@ -10,8 +10,11 @@ if (process.env.NODE_ENV === "production") {
           "For more details, visit https://goo.gl/AFskqB"
       );
     },
-    registered() {
+    registered(registration) {
       console.log("Service worker has been registered.");
+      setInterval(() => {
+        registration.update();
+      }, 5000); // every 5 seconds
     },
     cached() {
       console.log("Content has been cached for offline use.");
