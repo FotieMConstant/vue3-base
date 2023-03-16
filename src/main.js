@@ -6,6 +6,7 @@ import "./index.css";
 import { createI18n } from "vue-i18n";
 import loadLocaleMessages from "./i18nHelpers";
 import "./registerServiceWorker";
+import { VueProgressBar, options } from "./plugins/VueProgressBarPlugin";
 
 // i18n configuration
 const i18n = createI18n({
@@ -19,4 +20,5 @@ const app = createApp(App);
 app.use(store);
 app.use(router);
 app.use(i18n);
+app.use(VueProgressBar, options);
 app.mount("#app");
